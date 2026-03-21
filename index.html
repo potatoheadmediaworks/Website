@@ -1000,6 +1000,72 @@
       .mini-float2 { top: -1px; right: 8px; transform: translateY(-100%); }
     }
 
+    /* ===== TESTIMONIALS ===== */
+    #testimonials { background: var(--cream); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .testi-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 24px;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    }
+    .testi-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+    }
+    .testi-stars {
+      display: flex; gap: 4px;
+    }
+    .testi-stars span {
+      font-size: 16px;
+    }
+    .testi-quote {
+      font-size: 14.5px; line-height: 1.8;
+      color: var(--mid); flex: 1;
+    }
+    .testi-result {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange-glow);
+      border: 1px solid rgba(232,71,10,0.15);
+      color: var(--orange);
+      font-size: 12px; font-weight: 700;
+      padding: 7px 14px; border-radius: 30px;
+      letter-spacing: 0.3px;
+      width: fit-content;
+    }
+    .testi-result::before {
+      content: '↑';
+      font-size: 14px;
+    }
+    .testi-author {
+      display: flex; align-items: center; gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .testi-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 800; color: var(--white);
+      flex-shrink: 0;
+    }
+    .testi-name {
+      font-size: 14px; font-weight: 700; color: var(--dark);
+    }
+    .testi-handle {
+      font-size: 12px; color: var(--mid); margin-top: 2px;
+    }
+    @media (max-width: 1024px) {
+      .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+
     /* ===== REEL BELT (NEW) ===== */
     .reel-section {
       overflow: hidden;
@@ -1133,26 +1199,32 @@
   <!-- REEL SECTION -->
   <div class="reel-section">
     <div class="reel-track">
-      <!-- ORIGINAL SET -->
-      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774027844/AQNfcplfEWJ81cwcaIsyLofyLpV9XmonRLuApJjZpYHk6amDuY5DbduxFOZ9Mso5LOjEpBDUZr58vB-EZJtLwdj4_wvytsf.mp4" autoplay muted loop playsinline></video></div>
-      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQP7sUCLXAFnsCUv8wqJJ4Q8nfzQ1BKMxoB2i1M98j6tv-d6Xu1Rwsqx4U_n5Etpyg7DAqy3x78WV0O1AJZwO4wP_cunkta.mp4" autoplay muted loop playsinline></video></div>
+      <!-- ORIGINAL SET (12 videos in order) -->
       <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028523/AQOKIOCggHGVn80d-00YBCY9Zl5AYhPRlW2sd9hNZslRgx2GHLGo67baIh_nKiyNDOlG32x3ED0Dn-ZZrLlvokt8FJmXD8DTnNyfHdo_qk4siq.mp4" autoplay muted loop playsinline></video></div>
       <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQM1vh5k4-jgbTY12qM5Iw-64Cuw3pg7lAlk6s0W7QCqGjNKQviencgP7eCL3_SQ6yrTtR8Y750COMD-qLrF5d8n-9_4ztJw5HYCr-4_tlbn33.mp4" autoplay muted loop playsinline></video></div>
-      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQMKcYoiXgnOsQVwrLHuivoa2LnzF3-c8Qe6vdn0l_OjfeqAkMbt4hxZ8jPVf0UGjoSQqInbFOnMQdvfXGBVshSb_gjp3av.mp4" autoplay muted loop playsinline></video></div>
-      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028549/AQOOW0mjEhayiFPkx149tYcM7oBwaYm8IwvRd-6UJP9Np3veoWrRZpGZTurMg6fYs9QjYAMfP3O2ImphT5_OBba1sl_rB8wxbcSHygc_lfkwl8.mp4" autoplay muted loop playsinline></video></div>
-      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQNj5rmFaag4ej1XgbP9DJPm60Hj0pXgXQvBP7Z51u0m-96Ug-1Q9PXpan8NmhVN_29Hc9nlxjZ1LQHgtTThtne7GfzmUUDtOlRWsvQ_bqim4k.mp4" autoplay muted loop playsinline></video></div>
       <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028557/AQPvX9Q8uRrEz1ZKg_5jFk2ZV4HVitDv6wArQaZfXPDGULelojTv1mq6QWKdVJtQp1OObFjjs0S9PATO_-unpSnQ_yfkfel.mp4" autoplay muted loop playsinline></video></div>
-      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028556/AQP47TrIo8HeQJhA3X-8W-_xPWrtIHBFZaKbZzFR6-fwJX-uoYrglDyiATA7SSbIC6MToyKWiHR9KAumcDyTlbFU_liffpx.mp4" autoplay muted loop playsinline></video></div>
-      <!-- DUPLICATE SET — must be identical to original for seamless loop -->
       <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774027844/AQNfcplfEWJ81cwcaIsyLofyLpV9XmonRLuApJjZpYHk6amDuY5DbduxFOZ9Mso5LOjEpBDUZr58vB-EZJtLwdj4_wvytsf.mp4" autoplay muted loop playsinline></video></div>
       <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQP7sUCLXAFnsCUv8wqJJ4Q8nfzQ1BKMxoB2i1M98j6tv-d6Xu1Rwsqx4U_n5Etpyg7DAqy3x78WV0O1AJZwO4wP_cunkta.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774087186/AQP3HERZvol72sgqSuMrkQiTh4i_wkQI8-0kEJGNpUKOS-irWfcQZmWtSI0amjV0lDjOcqyEpyZmCPnpAsz98yp6_pzo3lb.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774087186/AQME8ZHBGms6qEiCAdo8v-GvjJAE9ObEoxGnkKYCAlcph6ygTwZmL_Lep4ypjrBr53KZItDW9TERnZyWN-ANmrFl7poRnKymO1SINRw_tcay7j.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028535/AQMrXpOBs3T1D6AkjTDgeb93CFOr18sotQtGUBYsnUl6c3kY9VtQS6QQRJhX9eBPZmUIf_K0LulRAwCYKwy8bHvXe9fw96lFQ5gWFTY_xzqyfl.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQNj5rmFaag4ej1XgbP9DJPm60Hj0pXgXQvBP7Z51u0m-96Ug-1Q9PXpan8NmhVN_29Hc9nlxjZ1LQHgtTThtne7GfzmUUDtOlRWsvQ_bqim4k.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028556/AQP47TrIo8HeQJhA3X-8W-_xPWrtIHBFZaKbZzFR6-fwJX-uoYrglDyiATA7SSbIC6MToyKWiHR9KAumcDyTlbFU_liffpx.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028533/AQO0Yl09cXmGPaPzElm9trUVizS5VNrqoJTVTfrwh2nU40OpZsVawl9eAbf9rQkgcEVSvB3C0KS-hhuXGWdUoM3ZCiyiKPxRkUa7rag_w9rkgu.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQMKcYoiXgnOsQVwrLHuivoa2LnzF3-c8Qe6vdn0l_OjfeqAkMbt4hxZ8jPVf0UGjoSQqInbFOnMQdvfXGBVshSb_gjp3av.mp4" autoplay muted loop playsinline></video></div>
+      <!-- DUPLICATE SET — identical order for seamless infinite loop -->
       <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028523/AQOKIOCggHGVn80d-00YBCY9Zl5AYhPRlW2sd9hNZslRgx2GHLGo67baIh_nKiyNDOlG32x3ED0Dn-ZZrLlvokt8FJmXD8DTnNyfHdo_qk4siq.mp4" autoplay muted loop playsinline></video></div>
       <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQM1vh5k4-jgbTY12qM5Iw-64Cuw3pg7lAlk6s0W7QCqGjNKQviencgP7eCL3_SQ6yrTtR8Y750COMD-qLrF5d8n-9_4ztJw5HYCr-4_tlbn33.mp4" autoplay muted loop playsinline></video></div>
-      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQMKcYoiXgnOsQVwrLHuivoa2LnzF3-c8Qe6vdn0l_OjfeqAkMbt4hxZ8jPVf0UGjoSQqInbFOnMQdvfXGBVshSb_gjp3av.mp4" autoplay muted loop playsinline></video></div>
-      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028549/AQOOW0mjEhayiFPkx149tYcM7oBwaYm8IwvRd-6UJP9Np3veoWrRZpGZTurMg6fYs9QjYAMfP3O2ImphT5_OBba1sl_rB8wxbcSHygc_lfkwl8.mp4" autoplay muted loop playsinline></video></div>
-      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQNj5rmFaag4ej1XgbP9DJPm60Hj0pXgXQvBP7Z51u0m-96Ug-1Q9PXpan8NmhVN_29Hc9nlxjZ1LQHgtTThtne7GfzmUUDtOlRWsvQ_bqim4k.mp4" autoplay muted loop playsinline></video></div>
       <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028557/AQPvX9Q8uRrEz1ZKg_5jFk2ZV4HVitDv6wArQaZfXPDGULelojTv1mq6QWKdVJtQp1OObFjjs0S9PATO_-unpSnQ_yfkfel.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774027844/AQNfcplfEWJ81cwcaIsyLofyLpV9XmonRLuApJjZpYHk6amDuY5DbduxFOZ9Mso5LOjEpBDUZr58vB-EZJtLwdj4_wvytsf.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQP7sUCLXAFnsCUv8wqJJ4Q8nfzQ1BKMxoB2i1M98j6tv-d6Xu1Rwsqx4U_n5Etpyg7DAqy3x78WV0O1AJZwO4wP_cunkta.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774087186/AQP3HERZvol72sgqSuMrkQiTh4i_wkQI8-0kEJGNpUKOS-irWfcQZmWtSI0amjV0lDjOcqyEpyZmCPnpAsz98yp6_pzo3lb.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774087186/AQME8ZHBGms6qEiCAdo8v-GvjJAE9ObEoxGnkKYCAlcph6ygTwZmL_Lep4ypjrBr53KZItDW9TERnZyWN-ANmrFl7poRnKymO1SINRw_tcay7j.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028535/AQMrXpOBs3T1D6AkjTDgeb93CFOr18sotQtGUBYsnUl6c3kY9VtQS6QQRJhX9eBPZmUIf_K0LulRAwCYKwy8bHvXe9fw96lFQ5gWFTY_xzqyfl.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQNj5rmFaag4ej1XgbP9DJPm60Hj0pXgXQvBP7Z51u0m-96Ug-1Q9PXpan8NmhVN_29Hc9nlxjZ1LQHgtTThtne7GfzmUUDtOlRWsvQ_bqim4k.mp4" autoplay muted loop playsinline></video></div>
       <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028556/AQP47TrIo8HeQJhA3X-8W-_xPWrtIHBFZaKbZzFR6-fwJX-uoYrglDyiATA7SSbIC6MToyKWiHR9KAumcDyTlbFU_liffpx.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028533/AQO0Yl09cXmGPaPzElm9trUVizS5VNrqoJTVTfrwh2nU40OpZsVawl9eAbf9rQkgcEVSvB3C0KS-hhuXGWdUoM3ZCiyiKPxRkUa7rag_w9rkgu.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQMKcYoiXgnOsQVwrLHuivoa2LnzF3-c8Qe6vdn0l_OjfeqAkMbt4hxZ8jPVf0UGjoSQqInbFOnMQdvfXGBVshSb_gjp3av.mp4" autoplay muted loop playsinline></video></div>
     </div>
   </div>
 
@@ -1360,6 +1432,57 @@
     </div>
   </section>
 
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="section-inner">
+      <div class="section-label reveal">Client Results</div>
+      <h2 class="section-heading reveal">Real brands.<br><span>Real growth.</span></h2>
+
+      <div class="testimonials-grid">
+
+        <div class="testi-card reveal reveal-delay-1">
+          <div class="testi-stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span></div>
+          <p class="testi-quote">"Running a business means content is always the last thing on my mind — especially short-form. PotatoHead changed that completely. They conceptualise, shoot, and edit with such ease that the whole process feels effortless. What started as founder-led content became our best-performing ads, driving both personal brand growth and direct business results. Truly grateful."</p>
+          <div class="testi-result">Organic content outperforming paid ads</div>
+          <div class="testi-author">
+            <div class="testi-avatar">G</div>
+            <div>
+              <div class="testi-name">Gunjan Malhotra</div>
+              <div class="testi-handle">Founder, Lemonade</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-2">
+          <div class="testi-stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span></div>
+          <p class="testi-quote">"I genuinely can't thank the team enough. They handle almost everything on my social platforms — taking a huge amount of stress and decision-fatigue off my plate. What I appreciate most is how timely, reliable, and creative they are. Every ask is met with thoughtful ideas and quick turnarounds. It has truly been a game-changer."</p>
+          <div class="testi-result">7K+ followers & weekly consultation signups in 3 months</div>
+          <div class="testi-author">
+            <div class="testi-avatar">H</div>
+            <div>
+              <div class="testi-name">Harleen Bedi</div>
+              <div class="testi-handle">Finance Creator</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal reveal-delay-3">
+          <div class="testi-stars"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span></div>
+          <p class="testi-quote">"As a business owner, finding time to shoot content was nearly impossible. PotatoHead built a strategy around that reality — and now the content we post gets 3x more reach than my high-production videos, with zero effort on my end. I just approve and post. They're the best team I've found, and I've looked."</p>
+          <div class="testi-result">10K+ followers, 3× reach vs. high-production content</div>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">Selene Hanna</div>
+              <div class="testi-handle">Realtor</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section id="cta">
     <div class="cta-inner reveal">
@@ -1428,7 +1551,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 PotatoHead Media Works. All rights reserved.</p>
+        <p>© 2025 PotatoHead Media Works. All rights reserved.</p>
         <div class="footer-loc">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           Mumbai, India
