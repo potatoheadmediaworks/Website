@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PotatoHead Media - Personal Branding & Video Production</title>
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dkgkfa3rj/image/upload/f_auto,q_auto,w_64/v1774077177/Untitled_design_12_ssbfki.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet"/>
   <style>
     /* ===== RESET & BASE ===== */
@@ -72,12 +73,13 @@
     .logo-circle {
       width: 38px; height: 38px;
       border-radius: 50%;
-      background: var(--dark);
+      background: transparent;
       display: flex; align-items: center; justify-content: center;
-      transition: background 0.3s;
+      overflow: hidden;
     }
-    .logo-circle:hover { background: var(--orange); }
+    .logo-circle:hover { background: transparent; }
     .logo-circle svg { width: 22px; height: 22px; }
+    .logo-circle img { width: 38px; height: 38px; object-fit: cover; border-radius: 50%; }
     .logo-text {
       font-size: 15px; font-weight: 700;
       color: var(--dark); letter-spacing: -0.3px;
@@ -390,26 +392,34 @@
     }
 
     .hero-stat-row {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
     }
     .hero-stat {
-      text-align: center;
-      padding: 16px 12px;
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 16px;
       background: var(--cream);
-      border-radius: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
     }
+    .hero-stat-icon {
+      width: 32px; height: 32px; flex-shrink: 0;
+      background: var(--orange-glow);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-stat-icon svg { width: 16px; height: 16px; color: var(--orange); stroke: var(--orange); }
+    .hero-stat-text { display: flex; flex-direction: column; gap: 1px; }
     .hero-stat-num {
-      font-size: 26px; font-weight: 800;
-      color: var(--dark); letter-spacing: -1px;
-      line-height: 1;
+      font-size: 13px; font-weight: 700;
+      color: var(--dark); letter-spacing: -0.2px;
+      line-height: 1.2;
     }
-    .hero-stat-num span { color: var(--orange); }
     .hero-stat-label {
-      font-size: 11px; font-weight: 500;
-      color: var(--mid); margin-top: 4px;
-      letter-spacing: 0.3px;
+      font-size: 11px; font-weight: 400;
+      color: var(--mid);
     }
 
     /* ===== MARQUEE ===== */
@@ -477,11 +487,11 @@
     /* ===== SERVICES ===== */
     #services { background: var(--white); }
     .services-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      margin-bottom: 60px; gap: 24px; flex-wrap: wrap;
+      display: flex; flex-direction: column;
+      margin-bottom: 60px; gap: 16px;
     }
     .services-header p {
-      max-width: 380px;
+      max-width: 560px;
       font-size: 16px; font-weight: 400; line-height: 1.7;
       color: var(--mid);
     }
@@ -588,6 +598,9 @@
     /* Process right side visual */
     .process-visual {
       position: relative;
+      overflow: visible;
+      padding-top: 36px;
+      padding-bottom: 36px;
     }
     .process-big-card {
       background: var(--dark);
@@ -640,6 +653,7 @@
       font-size: 13px; font-weight: 600;
       color: var(--dark);
       animation: floatY 4s ease-in-out infinite;
+      z-index: 10;
     }
     .mini-float:nth-child(2) { animation-delay: 1.5s; }
     @keyframes floatY {
@@ -647,8 +661,8 @@
       50% { transform: translateY(-8px); }
     }
     .mini-float .dot { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; }
-    .mini-float1 { bottom: -20px; left: -30px; }
-    .mini-float2 { top: -20px; right: -20px; }
+    .mini-float1 { bottom: -1px; left: -10px; transform: translateY(100%); }
+    .mini-float2 { top: -1px; right: -10px; transform: translateY(-100%); }
 
     /* ===== WHY US ===== */
     #why { background: var(--white); }
@@ -949,6 +963,7 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
     .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-6 { transition-delay: 0.6s; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
@@ -969,8 +984,8 @@
       .service-card:nth-child(3) { border-radius: 0; }
       .service-card:last-child { border-radius: 0 0 16px 16px; }
       .services-header { flex-direction: column; }
-      .mini-float1 { display: none; }
-      .mini-float2 { display: none; }
+      .mini-float1 { bottom: -18px; left: 16px; }
+      .mini-float2 { top: -18px; right: 16px; }
       section { padding: 70px 5vw; }
       .footer-top { flex-direction: column; gap: 36px; }
     }
@@ -979,6 +994,42 @@
       .cta-actions { flex-direction: column; align-items: center; }
       .hero-stat-row { grid-template-columns: repeat(3, 1fr); }
       .hero-stat-num { font-size: 20px; }
+      .reel-track { animation-duration: 18s; }
+      .marquee-track { animation-duration: 10s; }
+      .mini-float1 { bottom: -1px; left: 8px; transform: translateY(100%); }
+      .mini-float2 { top: -1px; right: 8px; transform: translateY(-100%); }
+    }
+
+    /* ===== REEL BELT (NEW) ===== */
+    .reel-section {
+      overflow: hidden;
+      padding: 40px 0;
+      background: var(--cream);
+      position: relative;
+    }
+    .reel-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: reelScroll 35s linear infinite;
+    }
+    @keyframes reelScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .reel-card {
+      width: 220px;
+      height: 390px;
+      border-radius: 18px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #000;
+    }
+    .reel-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -988,10 +1039,7 @@
   <nav id="navbar">
     <a class="nav-logo" href="#">
       <div class="logo-circle">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C9 2 6 5 6 9c0 2.5 1.3 4.7 3.2 6H8l-1 5h10l-1-5h-1.2C17.7 13.7 19 11.5 19 9c0-4-3-7-7-7z" fill="white"/>
-          <circle cx="10" cy="8" r="1.5" fill="#E8470A"/>
-        </svg>
+        <img src="https://res.cloudinary.com/dkgkfa3rj/image/upload/f_auto,q_auto,w_80/v1774077177/Untitled_design_12_ssbfki.png" alt="PotatoHead Media Logo" loading="eager" fetchpriority="high"/>
       </div>
       <span class="logo-text">PotatoHead<br><span>Media</span></span>
     </a>
@@ -1050,22 +1098,63 @@
           </div>
           <div class="hero-stat-row">
             <div class="hero-stat">
-              <div class="hero-stat-num">100%</div>
-              <div class="hero-stat-label">Done For You</div>
+              <div class="hero-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 2C9 2 6 5 6 9c0 2.5 1.3 4.7 3.2 6H8l-1 5h10l-1-5h-1.2C17.7 13.7 19 11.5 19 9c0-4-3-7-7-7z" fill="currentColor" stroke="none" style="color:var(--orange)"/></svg>
+              </div>
+              <div class="hero-stat-text">
+                <div class="hero-stat-num">100% Done-For-You</div>
+                <div class="hero-stat-label">We handle everything, start to finish</div>
+              </div>
             </div>
             <div class="hero-stat">
-              <div class="hero-stat-num">A - Z</div>
-              <div class="hero-stat-label">End-to-End</div>
+              <div class="hero-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="hero-stat-text">
+                <div class="hero-stat-num">Strategy → Distribution</div>
+                <div class="hero-stat-label">End-to-end content operation</div>
+              </div>
             </div>
             <div class="hero-stat">
-              <div class="hero-stat-num">Always</div>
-              <div class="hero-stat-label">On Brand</div>
+              <div class="hero-stat-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke="currentColor"/><path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="currentColor" stroke-linecap="round"/><line x1="9" y1="9" x2="9.01" y2="9" stroke="currentColor" stroke-linecap="round" stroke-width="3"/><line x1="15" y1="9" x2="15.01" y2="9" stroke="currentColor" stroke-linecap="round" stroke-width="3"/></svg>
+              </div>
+              <div class="hero-stat-text">
+                <div class="hero-stat-num">Built Around Your Brand</div>
+                <div class="hero-stat-label">No templates. Always on-brand.</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- REEL SECTION -->
+  <div class="reel-section">
+    <div class="reel-track">
+      <!-- ORIGINAL SET -->
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774027844/AQNfcplfEWJ81cwcaIsyLofyLpV9XmonRLuApJjZpYHk6amDuY5DbduxFOZ9Mso5LOjEpBDUZr58vB-EZJtLwdj4_wvytsf.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQP7sUCLXAFnsCUv8wqJJ4Q8nfzQ1BKMxoB2i1M98j6tv-d6Xu1Rwsqx4U_n5Etpyg7DAqy3x78WV0O1AJZwO4wP_cunkta.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028523/AQOKIOCggHGVn80d-00YBCY9Zl5AYhPRlW2sd9hNZslRgx2GHLGo67baIh_nKiyNDOlG32x3ED0Dn-ZZrLlvokt8FJmXD8DTnNyfHdo_qk4siq.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQM1vh5k4-jgbTY12qM5Iw-64Cuw3pg7lAlk6s0W7QCqGjNKQviencgP7eCL3_SQ6yrTtR8Y750COMD-qLrF5d8n-9_4ztJw5HYCr-4_tlbn33.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQMKcYoiXgnOsQVwrLHuivoa2LnzF3-c8Qe6vdn0l_OjfeqAkMbt4hxZ8jPVf0UGjoSQqInbFOnMQdvfXGBVshSb_gjp3av.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028549/AQOOW0mjEhayiFPkx149tYcM7oBwaYm8IwvRd-6UJP9Np3veoWrRZpGZTurMg6fYs9QjYAMfP3O2ImphT5_OBba1sl_rB8wxbcSHygc_lfkwl8.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQNj5rmFaag4ej1XgbP9DJPm60Hj0pXgXQvBP7Z51u0m-96Ug-1Q9PXpan8NmhVN_29Hc9nlxjZ1LQHgtTThtne7GfzmUUDtOlRWsvQ_bqim4k.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028557/AQPvX9Q8uRrEz1ZKg_5jFk2ZV4HVitDv6wArQaZfXPDGULelojTv1mq6QWKdVJtQp1OObFjjs0S9PATO_-unpSnQ_yfkfel.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028556/AQP47TrIo8HeQJhA3X-8W-_xPWrtIHBFZaKbZzFR6-fwJX-uoYrglDyiATA7SSbIC6MToyKWiHR9KAumcDyTlbFU_liffpx.mp4" autoplay muted loop playsinline></video></div>
+      <!-- DUPLICATE SET — must be identical to original for seamless loop -->
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774027844/AQNfcplfEWJ81cwcaIsyLofyLpV9XmonRLuApJjZpYHk6amDuY5DbduxFOZ9Mso5LOjEpBDUZr58vB-EZJtLwdj4_wvytsf.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQP7sUCLXAFnsCUv8wqJJ4Q8nfzQ1BKMxoB2i1M98j6tv-d6Xu1Rwsqx4U_n5Etpyg7DAqy3x78WV0O1AJZwO4wP_cunkta.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028523/AQOKIOCggHGVn80d-00YBCY9Zl5AYhPRlW2sd9hNZslRgx2GHLGo67baIh_nKiyNDOlG32x3ED0Dn-ZZrLlvokt8FJmXD8DTnNyfHdo_qk4siq.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQM1vh5k4-jgbTY12qM5Iw-64Cuw3pg7lAlk6s0W7QCqGjNKQviencgP7eCL3_SQ6yrTtR8Y750COMD-qLrF5d8n-9_4ztJw5HYCr-4_tlbn33.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028532/AQMKcYoiXgnOsQVwrLHuivoa2LnzF3-c8Qe6vdn0l_OjfeqAkMbt4hxZ8jPVf0UGjoSQqInbFOnMQdvfXGBVshSb_gjp3av.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028549/AQOOW0mjEhayiFPkx149tYcM7oBwaYm8IwvRd-6UJP9Np3veoWrRZpGZTurMg6fYs9QjYAMfP3O2ImphT5_OBba1sl_rB8wxbcSHygc_lfkwl8.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774076312/AQNj5rmFaag4ej1XgbP9DJPm60Hj0pXgXQvBP7Z51u0m-96Ug-1Q9PXpan8NmhVN_29Hc9nlxjZ1LQHgtTThtne7GfzmUUDtOlRWsvQ_bqim4k.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028557/AQPvX9Q8uRrEz1ZKg_5jFk2ZV4HVitDv6wArQaZfXPDGULelojTv1mq6QWKdVJtQp1OObFjjs0S9PATO_-unpSnQ_yfkfel.mp4" autoplay muted loop playsinline></video></div>
+      <div class="reel-card"><video src="https://res.cloudinary.com/dkgkfa3rj/video/upload/v1774028556/AQP47TrIo8HeQJhA3X-8W-_xPWrtIHBFZaKbZzFR6-fwJX-uoYrglDyiATA7SSbIC6MToyKWiHR9KAumcDyTlbFU_liffpx.mp4" autoplay muted loop playsinline></video></div>
+    </div>
+  </div>
 
   <!-- MARQUEE -->
   <div class="marquee-section">
@@ -1077,7 +1166,6 @@
       <span class="marquee-item"><span class="marquee-dot"></span>Research</span>
       <span class="marquee-item"><span class="marquee-dot"></span>Distribution</span>
       <span class="marquee-item"><span class="marquee-dot"></span>Content Strategy</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>PotatoHead Media</span>
       <span class="marquee-item"><span class="marquee-dot"></span>Personal Branding</span>
       <span class="marquee-item"><span class="marquee-dot"></span>Video Scripting</span>
       <span class="marquee-item"><span class="marquee-dot"></span>Pre-Production</span>
@@ -1085,7 +1173,6 @@
       <span class="marquee-item"><span class="marquee-dot"></span>Research</span>
       <span class="marquee-item"><span class="marquee-dot"></span>Distribution</span>
       <span class="marquee-item"><span class="marquee-dot"></span>Content Strategy</span>
-      <span class="marquee-item"><span class="marquee-dot"></span>PotatoHead Media</span>
     </div>
   </div>
 
@@ -1093,10 +1180,8 @@
   <section id="services">
     <div class="section-inner">
       <div class="services-header reveal">
-        <div>
-          <div class="section-label">What We Do</div>
-          <h2 class="section-heading">Everything you need<br>to <span>own your niche.</span></h2>
-        </div>
+        <div class="section-label">What We Do</div>
+        <h2 class="section-heading">Everything you need<br>to <span>own your niche.</span></h2>
         <p>From the first idea to the final distribution - we handle your entire content operation so you can focus on what you do best.</p>
       </div>
 
@@ -1146,7 +1231,7 @@
           <p class="service-desc">Strategic publishing, SEO-optimised descriptions, thumbnails, and cross-platform scheduling to maximise your reach and impact.</p>
         </div>
 
-        <div class="service-card reveal reveal-delay-1">
+        <div class="service-card reveal reveal-delay-6">
           <span class="service-num">06</span>
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
@@ -1302,10 +1387,7 @@
         <div class="footer-brand">
           <div class="nav-logo" style="text-decoration:none;">
             <div class="logo-circle">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C9 2 6 5 6 9c0 2.5 1.3 4.7 3.2 6H8l-1 5h10l-1-5h-1.2C17.7 13.7 19 11.5 19 9c0-4-3-7-7-7z" fill="white"/>
-                <circle cx="10" cy="8" r="1.5" fill="#E8470A"/>
-              </svg>
+              <img src="https://res.cloudinary.com/dkgkfa3rj/image/upload/f_auto,q_auto,w_80/v1774077177/Untitled_design_12_ssbfki.png" alt="PotatoHead Media Logo" loading="lazy"/>
             </div>
             <span class="logo-text" style="color:white;">PotatoHead<br><span>Media</span></span>
           </div>
@@ -1406,6 +1488,15 @@
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+      });
+    });
+  </script>
+
+  <script>
+    // Reel belt – click to toggle mute
+    document.querySelectorAll('.reel-card video').forEach(video => {
+      video.addEventListener('click', () => {
+        video.muted = !video.muted;
       });
     });
   </script>
